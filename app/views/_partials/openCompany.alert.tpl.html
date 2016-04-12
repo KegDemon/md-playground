@@ -1,0 +1,37 @@
+<md-dialog aria-label="List dialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                Open Company
+            </h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <p>
+                Search for a company using the input below
+            </p>
+            <form ng-submit="$event.preventDefault()">
+                <md-autocomplete 
+                    md-selected-item="openCompany.selectedItem"
+                    md-search-text="openCompany.searchText" 
+                    md-items="item in openCompany.dataStore"
+                    md-item-text="item.name.first" 
+                    md-min-length="0" 
+                    placeholder="Search for Company...">
+                    <md-item-template>
+                        <span md-highlight-text="openCompany.searchText" md-highlight-flags="^i">{{item.name.first}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No companies matching "{{openCompany.searchText}}" were found.
+                    </md-not-found>
+                </md-autocomplete>
+            </form>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="openCompany.open(openCompany.selectedItem)" class="md-primary">Open</md-button>
+        <md-button ng-click="openCompany.close()" class="md-primary">Close</md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,41 @@
+<section layout="row" flex>
+    <!--<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="leftMenu" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Menu</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <md-button ng-click="vm.$closeLeft()" class="md-primary" hide-gt-md>
+                Close Sidenav Left
+            </md-button>
+            <p hide-md show-gt-md>
+                This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
+            </p>
+        </md-content>
+    </md-sidenav>-->
+    <md-content flex layout-padding>
+        <!--<md-button ng-click="vm.$toggleLeft()" class="md-primary" hide-gt-md>
+            Toggle Menu
+        </md-button>-->
+        <div layout="row" layout-align="center center" layout-wrap>
+            
+            <md-button ng-click="vm.newCompanyDialog();" aria-label="New Company">
+                <md-card>
+                    <i class="material-icons lead-in-icon">domain</i>
+                    <md-card-content>
+                        New Company
+                    </md-card-content>
+                </md-card>
+            </md-button>
+            
+            <md-button ng-click="vm.openCompanyDialog();" aria-label="Open Company">
+                <md-card>
+                    <i class="material-icons lead-in-icon">location_city</i>
+                    <md-card-content>
+                        Open Company
+                    </md-card-content>
+                </md-card>
+            </md-button>
+            
+        </div>
+    </md-content>
+</section>
