@@ -1,3 +1,63 @@
+<md-toolbar layout-align="center start" class="md-menu-toolbar menu-bottom-border">
+
+    <md-menu-bar>
+        <md-menu>
+            <button ng-click="$mdOpenMenu()">
+                File
+            </button>
+            <md-menu-content>
+
+                <md-menu-item>
+                    <md-button ng-click="vm.newCompanyDialog();">
+                        New Company...
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-divider></md-menu-divider>
+
+                <md-menu-item>
+                    <md-button ng-click="vm.openCompanyDialog();">
+                        Open Company...
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="">
+                        Save Company...
+                    </md-button>
+                </md-menu-item>
+
+            </md-menu-content>
+        </md-menu>
+
+        <md-menu>
+            <button ng-click="$mdOpenMenu()">
+                Status [status color]
+            </button>
+            <md-menu-content>
+
+                <md-menu-item>
+                    <p>Pub State 1</p>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <p>Pub State 2</p>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <p>Pub State 3</p>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <p>Pub State 4</p>
+                </md-menu-item>
+
+            </md-menu-content>
+        </md-menu>
+
+    </md-menu-bar>
+
+</md-toolbar>
+
 <section layout="row" flex>
     <!--<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="leftMenu" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-theme-indigo">
@@ -12,30 +72,58 @@
             </p>
         </md-content>
     </md-sidenav>-->
-    <md-content flex layout-padding>
-        <!--<md-button ng-click="vm.$toggleLeft()" class="md-primary" hide-gt-md>
-            Toggle Menu
-        </md-button>-->
-        <div layout="row" layout-align="center center" layout-wrap>
-            
-            <md-button ng-click="vm.newCompanyDialog();" aria-label="New Company">
-                <md-card>
-                    <i class="material-icons lead-in-icon">domain</i>
-                    <md-card-content>
-                        New Company
-                    </md-card-content>
-                </md-card>
-            </md-button>
-            
-            <md-button ng-click="vm.openCompanyDialog();" aria-label="Open Company">
-                <md-card>
-                    <i class="material-icons lead-in-icon">location_city</i>
-                    <md-card-content>
-                        Open Company
-                    </md-card-content>
-                </md-card>
-            </md-button>
-            
+    
+    <md-content flex="20" md-whiteframe="4" layout-padding>
+        Test
+    </md-content>
+    
+    <md-content flex layout-padding md-whiteframe="4">
+        <div>
+            <form>
+                <!---->
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Title</label>
+                        <input ng-model="vm.display.name.title">
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First Name</label>                 
+                        <input ng-model="vm.display.name.first">
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last Name</label>
+                        <input ng-model="vm.display.name.last">
+                    </md-input-container>
+                </div>
+                
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Street</label>
+                        <input ng-model="vm.display.location.street" type="text">
+                    </md-input-container>
+                </div>
+                
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>City</label>
+                        <input ng-model="vm.display.location.city" type="text">
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>State</label>
+                        <input ng-model="vm.display.location.state" type="text">
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Postal</label>
+                        <input ng-model="vm.display.location.postcode" type="text">
+                    </md-input-container>
+                </div>
+                
+                <!---->
+            </form>
         </div>
     </md-content>
 </section>

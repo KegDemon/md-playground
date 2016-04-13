@@ -11,10 +11,13 @@ angular.module('demoAppApp')
     .controller('MainCtrl', ['$mdDialog', 'MainSvc', function($mdDialog, svc) {
         var vm = this;
 
-        
+        vm.display = svc.base();
 
         vm.newCompanyDialog = function newCompanyDialog() {
+            // Exec changed data flag
+            // Alert if saved already
             
+            vm.display = svc.base();
         };
         
         vm.openCompanyDialog = function openCompanyDialog() {
@@ -41,7 +44,7 @@ angular.module('demoAppApp')
                 }],
                 controllerAs: 'openCompany'
             }).then(function(selection) {
-                console.info ( selection ) ;
+                vm.display = angular.extend(vm.display, selection);
             });
         };
         
