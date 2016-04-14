@@ -52,7 +52,7 @@ angular.module('demoAppApp')
                     "medium": "",
                     "thumbnail": ""
                 },
-                "nat": "FI"
+                "nat": ""
             };
         };
 

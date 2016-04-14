@@ -58,6 +58,12 @@
 
 </md-toolbar>
 
+<md-tabs md-selected="selectedIndex" md-center-tabs="true" md-stretch-tabs="always">
+    <md-tab label="Company" ng-click="vm.navToTab(this);"></md-tab>
+    <md-tab label="Employees" ng-click="vm.navToTab(this);"></md-tab>
+    <md-tab label="Triggers" ng-click="vm.navToTab(this);"></md-tab>
+</md-tabs>
+
 <section layout="row" flex>
     <!--<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="leftMenu" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-theme-indigo">
@@ -72,10 +78,6 @@
             </p>
         </md-content>
     </md-sidenav>-->
-    
-    <md-content flex="20" md-whiteframe="4" layout-padding>
-        Test
-    </md-content>
     
     <md-content flex layout-padding md-whiteframe="4">
         <div>
@@ -95,6 +97,13 @@
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Last Name</label>
                         <input ng-model="vm.display.name.last">
+                    </md-input-container>
+                </div>
+                
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Email Address</label>
+                        <input ng-model="vm.display.email">
                     </md-input-container>
                 </div>
                 

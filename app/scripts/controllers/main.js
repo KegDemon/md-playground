@@ -48,5 +48,9 @@ angular.module('demoAppApp')
             });
         };
         
+        vm.navToTab = function navToTab() {
+            console.info ( arguments ) ;
+        };
+        
 
     }]);
