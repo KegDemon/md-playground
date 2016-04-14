@@ -1,6 +1,10 @@
 <md-toolbar layout-align="center start" class="md-menu-toolbar menu-bottom-border">
 
     <md-menu-bar>
+        <md-button class="md-icon-button" ng-click="vm.$stayOpen = !vm.$stayOpen" aria-label="Side Navigation">
+            <i class="material-icons">menu</i>
+        </md-button>
+
         <md-menu>
             <button ng-click="$mdOpenMenu()">
                 File
@@ -54,32 +58,31 @@
             </md-menu-content>
         </md-menu>
 
+        <button>
+            Email Verification
+        </button>
+
     </md-menu-bar>
 
 </md-toolbar>
 
-<md-tabs md-selected="selectedIndex" md-center-tabs="true" md-stretch-tabs="always">
-    <md-tab label="Company" ng-click="vm.navToTab(this);"></md-tab>
-    <md-tab label="Employees" ng-click="vm.navToTab(this);"></md-tab>
-    <md-tab label="Triggers" ng-click="vm.navToTab(this);"></md-tab>
-</md-tabs>
-
-<section layout="row" flex>
-    <!--<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="leftMenu" md-is-locked-open="$mdMedia('gt-md')">
-        <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Menu</h1>
-        </md-toolbar>
+<section layout="row">
+    <md-sidenav class="md-whiteframe-z2" md-component-id="$leftMenu" md-is-locked-open="vm.$stayOpen">
         <md-content layout-padding>
-            <md-button ng-click="vm.$closeLeft()" class="md-primary" hide-gt-md>
-                Close Sidenav Left
+            <md-button ng-click="vm.$stayOpen = !vm.$stayOpen" class="md-primary" hide-gt-md>
+                Close Sidenav
             </md-button>
-            <p hide-md show-gt-md>
-                This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
-            </p>
+            <md-list>
+                <md-list-item class="md-1-line" ng-repeat="item in vm.sideNavOptions">
+                    <div class="md-list-item-text">
+                        <h3>{{item.title}}</h3>
+                    </div>
+                </md-list-item>
+            </md-list>
         </md-content>
-    </md-sidenav>-->
-    
-    <md-content flex layout-padding md-whiteframe="4">
+    </md-sidenav>
+
+    <md-content flex layout-padding class="md-whiteframe-z2">
         <div>
             <form>
                 <!---->
@@ -88,49 +91,49 @@
                         <label>Title</label>
                         <input ng-model="vm.display.name.title">
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>First Name</label>                 
+                        <label>First Name</label>
                         <input ng-model="vm.display.name.first">
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Last Name</label>
                         <input ng-model="vm.display.name.last">
                     </md-input-container>
                 </div>
-                
+
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Email Address</label>
                         <input ng-model="vm.display.email">
                     </md-input-container>
                 </div>
-                
+
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Street</label>
                         <input ng-model="vm.display.location.street" type="text">
                     </md-input-container>
                 </div>
-                
+
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>City</label>
                         <input ng-model="vm.display.location.city" type="text">
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>State</label>
                         <input ng-model="vm.display.location.state" type="text">
                     </md-input-container>
-                    
+
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Postal</label>
                         <input ng-model="vm.display.location.postcode" type="text">
                     </md-input-container>
                 </div>
-                
+
                 <!---->
             </form>
         </div>

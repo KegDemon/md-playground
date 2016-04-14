@@ -56,4 +56,12 @@ angular.module('demoAppApp')
             };
         };
 
+        this.sideOptions = function sideOptions() {
+            return [{
+                title: 'Menu Item 1'
+            }, {
+                title: 'Menu Item 2'
+            }];
+        };
+
     }]);
